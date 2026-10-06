@@ -17,17 +17,23 @@ We built an evidence-backed refund reconciliation and control-review intelligenc
 
 ## 2. What does one run cost, and what would a month cost at Vireo's volume (roughly 650 tickets a week)? Show the arithmetic. If you used no paid calls, say so.
 
-### Vireo Volume Arithmetic:
-* **Weekly Volume:** Approximately 650 tickets / week.
-* **Monthly Volume:** 650 tickets/week * 52 / 12 = 2,817 total tickets / month.
-* **Monthly Refund Tickets (20.17% observed rate):** 2,817 * 20.17% = 568 refund tickets / month.
+**Actual cost: ₹0 / $0 in API charges.**
 
-### Pipeline Cost & LLM Call Estimation:
-The system uses a hybrid architecture: Stage 1 Regex pre-classifies approximately 47% of tickets deterministically (₹0.00 API cost). Stage 2 invokes the Groq API (`openai/gpt-oss-120b`) for messy free-text classification.
+I used a hybrid pipeline:
+* **~47%** of refund tickets are handled deterministically using regex/rules → **₹0 API cost**
+* The remaining ambiguous text is classified using **Groq (`openai/gpt-oss-120b`)**
+* During development and testing, I used the **available free Groq usage**, so I incurred **no paid API charges**.
 
-* **Full Historical Dataset Run (2,340 refund cases):** Approximately 1,243 LLM calls * (400 input + 100 output tokens per call) = 497k input tokens + 124k output tokens. Estimated model cost is **$0.39 USD (approximately ₹33 INR)**.
-* **Monthly Incremental Volume (approximately 568 refund cases):** Approximately 302 LLM calls = 121k input tokens + 30k output tokens. Estimated model cost is **$0.095 USD (approximately ₹8 INR) / month**.
-* **Billing Status:** Estimated from stated token/pricing assumptions; actual cost depends on current Groq pricing and the number of LLM calls. If operating under Groq's developer free tier (up to 14,400 daily requests), actual paid API outlay is **₹0.00**.
+### Vireo Volume Arithmetic
+
+* **Weekly:** ~650 tickets
+* **Monthly:** `650 × 52 ÷ 12 ≈ 2,817 tickets`
+* **Refund tickets:** `2,817 × 20.17% ≈ 568 refund tickets/month`
+
+So, at approximately **568 refund cases/month**, the system would continue to use the same hybrid pipeline. **Under the free usage available to me, the actual API cost was ₹0.**
+
+> **Cost note:** The ₹0 figure reflects my actual development run using free API usage. It is not a guarantee that future production usage will remain free; production cost would depend on Vireo's chosen Groq plan, limits, and actual request volume.
+
 
 ---
 
