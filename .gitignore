@@ -1,0 +1,19 @@
+# Python / Virtual Environment
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Outputs (keep outputs structure)
+outputs/*.json
+outputs/*.csv
+!outputs/.gitkeep
+
+# Environment files
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
