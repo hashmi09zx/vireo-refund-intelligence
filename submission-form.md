@@ -93,12 +93,6 @@ https://drive.google.com/file/d/1VvhiLxX_ePRTO6_EPAbqf5dJCbiu5g97/view?usp=shari
 
 ---
 
-## 10. Public Google Drive link.
-
-https://drive.google.com/file/d/1VvhiLxX_ePRTO6_EPAbqf5dJCbiu5g97/view?usp=sharing
-
----
-
 ## 11. Someone picks this up on Monday and you are unreachable. The three things they need to know.
 
 1. **Reconciliation Baseline:** The canonical refund ledger (`outputs/canonical_refund_ledger.csv`, ₹67,09,932.00 across 2,340 cases) is the single source of financial truth. Never use raw helpdesk export sums directly.
