@@ -5,7 +5,7 @@
 We built an evidence-backed refund reconciliation and control-review intelligence system that converts corrupted support helpdesk exports into a single source of truth canonical refund ledger, explains the empirical drivers of refund growth, and prioritizes policy exceptions for targeted operational review.
 
 ### The Numbers & The Money:
-* **Canonical Financial Reconciliation:** Reconciled raw support ticket exports (unnormalized sum ~₹23.01 Crore) down to a canonical source of truth of **₹67,09,932.00** across **2,340 canonical cases** (scaling legacy Freshdesk amounts by 100 and deduplicating 125 migrated refund records).
+* **Canonical Financial Reconciliation:** Reconciled raw support ticket exports (unnormalized sum approximately ₹23.01 Crore) down to a canonical source of truth of **₹67,09,932.00** across **2,340 canonical cases** (scaling legacy Freshdesk amounts by 100 and deduplicating 125 migrated refund records).
 * **Refund Growth Explanation:** Proved that quarterly refund outlay growth (**+109.95%**, from ₹6,09,583.00 in 2025Q1 to ₹12,79,823.00 in 2026Q2) was driven by **+116.24% support ticket volume growth** (1,053 to 2,277 tickets), while the overall refund rate remained flat (**+0.64 percentage points**, moving from 20.13% to 20.77%). Frontline refund propensity did not deteriorate.
 * **Observed Control-Review Exposure:** Identified **₹8,24,245.00** in combined gross non-overlapping policy exceptions requiring operational review:
   * **R1 — Refund + Replacement:** 166 cases = ₹5,74,191.00 (refund issued AND replacement unit sent for same order).
@@ -15,18 +15,18 @@ We built an evidence-backed refund reconciliation and control-review intelligenc
 
 ---
 
-## 2. What does one run cost, and what would a month cost at Vireo's volume (~650 tickets a week)? Show the arithmetic. If you used no paid calls, say so.
+## 2. What does one run cost, and what would a month cost at Vireo's volume (roughly 650 tickets a week)? Show the arithmetic. If you used no paid calls, say so.
 
 ### Vireo Volume Arithmetic:
-* **Weekly Volume:** ~650 tickets / week.
-* **Monthly Volume:** $650 \text{ tickets/week} \times 52 / 12 \approx 2,817 \text{ total tickets / month}$.
-* **Monthly Refund Tickets (20.17% observed rate):** $2,817 \times 20.17\% \approx 568 \text{ refund tickets / month}$.
+* **Weekly Volume:** Approximately 650 tickets / week.
+* **Monthly Volume:** 650 tickets/week * 52 / 12 = 2,817 total tickets / month.
+* **Monthly Refund Tickets (20.17% observed rate):** 2,817 * 20.17% = 568 refund tickets / month.
 
 ### Pipeline Cost & LLM Call Estimation:
-The system uses a hybrid architecture: Stage 1 Regex pre-classifies ~47% of tickets deterministically (₹0.00 API cost). Stage 2 invokes the Groq API (`openai/gpt-oss-120b`) for messy free-text classification.
+The system uses a hybrid architecture: Stage 1 Regex pre-classifies approximately 47% of tickets deterministically (₹0.00 API cost). Stage 2 invokes the Groq API (`openai/gpt-oss-120b`) for messy free-text classification.
 
-* **Full Historical Dataset Run (2,340 refund cases):** ~1,243 LLM calls $\times$ (~400 input + ~100 output tokens per call) $\approx$ 497k input tokens + 124k output tokens. Estimated model cost is **~$0.39 USD (~₹33 INR)**.
-* **Monthly Incremental Volume (~568 refund cases):** ~302 LLM calls $\approx$ 121k input tokens + 30k output tokens. Estimated model cost is **~$0.095 USD (~₹8 INR) / month**.
+* **Full Historical Dataset Run (2,340 refund cases):** Approximately 1,243 LLM calls * (400 input + 100 output tokens per call) = 497k input tokens + 124k output tokens. Estimated model cost is **$0.39 USD (approximately ₹33 INR)**.
+* **Monthly Incremental Volume (approximately 568 refund cases):** Approximately 302 LLM calls = 121k input tokens + 30k output tokens. Estimated model cost is **$0.095 USD (approximately ₹8 INR) / month**.
 * **Billing Status:** Estimated from stated token/pricing assumptions; actual cost depends on current Groq pricing and the number of LLM calls. If operating under Groq's developer free tier (up to 14,400 daily requests), actual paid API outlay is **₹0.00**.
 
 ---
@@ -72,7 +72,7 @@ We deliberately excluded Vector DB / RAG pipelines, multi-agent frameworks, pred
 ## 7. Anything you built or found that nobody asked for?
 
 1. **Ticket-Level Evidence Explorer (UI Page 5):** An interactive Streamlit component allowing Finance to click any control finding and inspect the underlying ticket ID, order ID, original customer text, agent note, policy clause, and calculation formula.
-2. **Hybrid Stage 1 Regex + Stage 2 LLM Classifier:** Pre-filters ~47% of tickets deterministically before calling Groq, minimizing API latency and cost.
+2. **Hybrid Stage 1 Regex + Stage 2 LLM Classifier:** Pre-filters approximately 47% of tickets deterministically before calling Groq, minimizing API latency and cost.
 3. **Reason Mismatch Taxonomy (`GW-OTHER` Breakdown):** Automatically maps generic `GW-OTHER` dropdown selections into true underlying categories (Defect, Delay, Buyer Remorse, Goodwill).
 
 ---
@@ -89,13 +89,13 @@ We deliberately excluded Vector DB / RAG pipelines, multi-agent frameworks, pred
 
 ## 9. Three-minute screen recording link.
 
-`[TO BE ADDED AFTER FINAL 3-MINUTE SCREEN RECORDING]`
+https://drive.google.com/file/d/1VvhiLxX_ePRTO6_EPAbqf5dJCbiu5g97/view?usp=sharing
 
 ---
 
 ## 10. Public Google Drive link.
 
-`[TO BE ADDED AFTER FINAL UPLOAD]`
+https://drive.google.com/file/d/1VvhiLxX_ePRTO6_EPAbqf5dJCbiu5g97/view?usp=sharing
 
 ---
 
@@ -109,10 +109,11 @@ We deliberately excluded Vector DB / RAG pipelines, multi-agent frameworks, pred
 
 ## 12. Honest hours spent. One number.
 
-`[USER INPUT REQUIRED — HONEST HOURS SPENT]`
+4.5
 
 ---
 
 ## 13. Github Repo Link.
 
-`[TO BE ADDED AFTER PUBLIC REPOSITORY CREATION]`
+https://github.com/hashmi09zx/vireo-refund-intelligence
+
